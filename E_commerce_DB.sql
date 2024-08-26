@@ -61,6 +61,15 @@ payment_method varchar(50),
 status varchar(50) default 'Completed',
 foreign key (order_id) references Orders(Order_id));
 
+create table rating(
+user_id int,
+product_id int,
+rating int check (rating between 1 and 5),
+foreign key (product_id) references Products(product_id),
+rating_date timestamp default current_timestamp,
+foreign key(user_id) references User(user_id)
+);
+
 show tables;
                                                                                                                                                                                                                                                       
  
